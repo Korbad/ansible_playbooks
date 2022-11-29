@@ -1,0 +1,7 @@
+---
+- hosts: paychexalma8
+  connection: local
+  roles:
+    - name: korbad.vagrant_manager.vagrant_files
+    - name: korbad.vagrant_manager.vagrant_provision
+    - name: korbad.vagrant_manager.vagrant_box_state

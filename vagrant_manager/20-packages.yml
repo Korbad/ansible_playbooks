@@ -1,0 +1,22 @@
+---
+- hosts: paychexalma8
+  roles:
+  - name: korbad.alma_workstation.pip_packages
+    vars:
+      python_modules:
+      - ansible
+  - name: korbad.alma_workstation.chrome
+  - name: korbad.alma_workstation.snapd
+  - name: korbad.alma_workstation.discord
+  - name: korbad.alma_workstation.vscode
+  - name: korbad.alma_workstation.1password
+  - name: korbad.alma_workstation.gh_cli
+  - name: korbad.alma_workstation.virtual_box
+  - name: korbad.alma_workstation.packages
+    vars:
+      package_list:
+      - make
+      - gcc
+      - perl
+      - kernel-devel
+  - name: korbad.alma_workstation.vagrant

@@ -1,0 +1,38 @@
+---
+all:
+  children:
+    credentials_users:
+      children:
+        vagrant_boxes:
+        virtual_box_instances:
+    virtual_box_instances:
+      children:
+        alma_vms:
+          hosts:
+            alma8_ansible_driver:
+    vagrant_boxes:
+      # vagrant does not allow underscores in hostnames
+      children:
+        vagrant_ubuntu_boxes:
+          vars:
+            vagrant_vm_box: ubuntu/bionic64
+            provisioner_playbook: ubuntu_playbook.yml
+            vagrant_state: suspend
+          hosts:
+            bionic-vagrant-test15:
+              ansible_host: 192.168.56.15
+            bionic-vagrant-test17:
+              ansible_host: 192.168.56.17
+        vagrant_alma_boxes:
+          vars:
+            vagrant_vm_box: almalinux/8
+            provisioner_playbook: alma_playbook.yml
+          hosts:
+            paychexalma8:
+              vagrant_state: up
+            ansible-driver:
+              ansible_host: 192.168.56.10
+              vagrant_state: suspend
+            ansible-meta:
+              ansible_host: 192.168.56.11
+              vagrant_state: suspend

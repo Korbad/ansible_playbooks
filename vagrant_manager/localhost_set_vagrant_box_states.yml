@@ -1,0 +1,6 @@
+---
+- name: Manages whether vagrant boxes are active (up or down)
+  hosts: vagrant_boxes
+  connection: local
+  roles:
+  - name: korbad.vagrant_manager.vagrant_box_state

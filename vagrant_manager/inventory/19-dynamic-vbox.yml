@@ -1,0 +1,8 @@
+---
+plugin: community.general.virtualbox
+keyed_groups:
+- key: vbox_Guest_OS
+  prefix: ""
+  separator: ""
+compose:
+  guest_os: vbox_Guest_OS

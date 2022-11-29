@@ -1,0 +1,10 @@
+---
+- hosts: paychexalma8
+  gather_facts: yes
+  roles:
+  - name: korbad.alma_workstation.packages
+    vars:
+      package_list:
+      - python3.9
+      - python3-pip
+      - nmap
