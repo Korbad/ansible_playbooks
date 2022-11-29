@@ -1,0 +1,1 @@
+ansible-playbook-grapher ../alma_workstation/40-manage-git-repos.yml -i localhost-inventory.yml
