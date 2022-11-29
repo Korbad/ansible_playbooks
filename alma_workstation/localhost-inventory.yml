@@ -1,5 +1,0 @@
----
-all:
-  vars:
-    local_credentials_path: "{{ lookup('env','HOME') }}/.credentials"
-
