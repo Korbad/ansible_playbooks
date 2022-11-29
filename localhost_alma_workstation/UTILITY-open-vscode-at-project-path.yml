@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+  - command:
+      cmd: code {{ project_path }}
+    vars:
+      github_org: "{{item.github_org}}"
+      github_repo: "{{item.github_repo}}"
+      project_path: "{{ (lookup('env','HOME'),'managed_github_repos',github_org,github_repo) | path_join }}"
+    loop:
+    - github_org: Korbad
+      github_repo: gcp
+    - github_org: Korbad
+      github_repo: gcp

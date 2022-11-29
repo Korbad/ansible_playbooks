@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  roles:
+  - name: korbad.alma_workstation.github_repos
+    vars:
+      git_config_username: korbad
+      git_config_email: korbad@gmail.com
