@@ -1,0 +1,5 @@
+---
+collections:
+- name: https://github.com/Korbad/vagrant_management.git
+  type: git
+  
