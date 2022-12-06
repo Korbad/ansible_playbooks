@@ -1,0 +1,4 @@
+---
+collections:
+- name: https://github.com/Korbad/alma_workstation.git
+  type: git

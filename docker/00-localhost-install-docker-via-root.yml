@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  vars_prompt:
+  - name: ansible_become_pass
+    prompt: become password?
+    private: yes
+  roles:
+  - name: korbad.docker_manager.docker_installation
+  - name: korbad.alma_workstation.pip_packages
+    vars:
+      pip_package_list:
+      - docker

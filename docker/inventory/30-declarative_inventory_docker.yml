@@ -1,0 +1,23 @@
+---
+all:
+  children:
+    managed_hosts:
+      children:
+        docker_containers:
+    docker_containers:
+      vars:
+        ansible_connection: docker
+      children:
+        alma_docker_containers:
+          vars:
+            container_name: "almalinux8"
+            image_name: almalinux/8-base
+          hosts:
+            alma_8_docker:
+            alpine_linux:
+      hosts:
+        alpine_linux_docker:
+          container_name: alpine_linux
+          container_path: "{{ (dockerfile_dir, inventory_hostname) | path_join }}"
+          docker_filename: Dockerfile_alpine
+          image_name: "{{ container_name }}:v1.0"
