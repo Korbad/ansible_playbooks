@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  vars_prompt:
+  - name: ansible_become_pass
+    prompt: become password?
+    private: yes
+  roles:
+  - name: korbad.alma_workstation.virtualenvs
+    vars:
+      python_modules:
+      - docker
+      virtualenv_name: python39_docker
+  - name: korbad.alma_workstation.virtualenvs
+    vars:
+      python_modules:
+      - ansible
+      - docker
+      virtualenv_name: python39_ansible
