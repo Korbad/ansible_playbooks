@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  vars:
+    bitbucket_repos_basedir: "{{ lookup('env','HOME')+'/managed_bitbucket_repos' }}"
+  tasks:
+  - name: Clone repo
+    git:
+      repo: ssh://git@code.paychex.com/{{ org_name }}/{{ repo_name }}.git
+      dest: "{{ (bitbucket_repos_basedir, org_name, repo_name) | path_join }}"
+      accept_hostkey: yes
+    vars:
+      org_name: n2c
+      repo_name: awx_management
