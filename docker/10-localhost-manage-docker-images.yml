@@ -1,0 +1,13 @@
+---
+- name: Build the docker images
+  hosts: docker_containers
+  connection: local
+  vars_prompt:
+  - name: ansible_become_pass
+    prompt: become password?
+    private: yes
+  gather_facts: no
+  collections:
+    - community.docker
+  roles:
+    - name: korbad.docker_manager.manage_docker_containers

@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Get info on docker host and list images
+    docker_host_info:
+      images: yes
+    register: result

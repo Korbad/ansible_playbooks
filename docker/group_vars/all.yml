@@ -1,0 +1,2 @@
+---
+dockerfile_dir: "{{ lookup('env','HOME') }}/managed_dockerfiles"

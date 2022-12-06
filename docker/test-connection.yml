@@ -1,0 +1,16 @@
+---
+- hosts: docker_containers
+  gather_facts: no
+  tasks:
+  - name: Host info
+    community.docker.docker_host_info:
+    register: host_result
+    run_once: yes
+    delegate_to: localhost
+    
+  - name: Inspect image
+    community.docker.docker_image_info:
+      name: "{{ image_name }}"
+    register: image_result
+    delegate_to: localhost
+  
