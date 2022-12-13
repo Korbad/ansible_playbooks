@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    virtualenv_name: python39_ansible
+    ansible_python_interpreter: "{{ (managed_virtualenvs_path, virtualenv_name, 'bin', 'python3.9') | path_join }}"
+  tasks:
+  - debug:
+      var: ansible_playbook_python
+  - debug:
+      var: managed_virtualenvs_path
+  - debug:
+      var: ansible_python_interpreter
+  - command: which python3
+  - command: ansible --version
+  - command: docker --version
+  - command: python3 --version

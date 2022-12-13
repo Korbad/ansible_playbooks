@@ -1,0 +1,1 @@
+source ~/managed_virtualenvs/python39_ansible/bin/activate
