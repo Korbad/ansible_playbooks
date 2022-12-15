@@ -1,0 +1,46 @@
+---
+#https://www.youtube.com/watch?v=-FC0XGkMkE4
+#https://console.redhat.com/openshift/create/local
+- hosts: localhost
+  # pull secret: {"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K29jbV9hY2Nlc3NfOTdkMGY0MDhmOGRhNDE1MDllNTRiZmM2NGRiMjMwZmE6R1JPREdNT0NKUDRPNlpWVFRMT1VXNzBaVUExVlVPRDhVQVdHQjlDMFVLT0pFQllMVlVNN1BYMTdKNk5IMkFFOQ==","email":"korbad@gmail.com"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K29jbV9hY2Nlc3NfOTdkMGY0MDhmOGRhNDE1MDllNTRiZmM2NGRiMjMwZmE6R1JPREdNT0NKUDRPNlpWVFRMT1VXNzBaVUExVlVPRDhVQVdHQjlDMFVLT0pFQllMVlVNN1BYMTdKNk5IMkFFOQ==","email":"korbad@gmail.com"},"registry.connect.redhat.com":{"auth":"fHVoYy1wb29sLWZkOThiM2QxLWZlYmQtNGNmZS1iZDExLWEyMDhmNTI4ODUzYTpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSTRaamN6TURFd09UZG1PVFUwWVRCa1lqTm1ZVFJqWldVeE1tVmpNemhsTWlKOS50dUxpeFJ2X1Q4QS1uXzJwOElEcFl4elBoWTVTaUFsVVNvSFZtb1lja0tncC1GcFpBSDZzR2laV2tTa01maEVrUzZicjRDSFhqM1d4R0JfQ1l3QWVTY2pPbHVRVDlqeDgyNUVXaTAwdHJ5eUxPdWJ4Mm90T2lGLWxjNm84WWM3aFRudmJBbXNWWFVFU2pvb3N0d3Eyamg1bVBieU1FZm0wM3VNdDdzTVhNQWFRcFNyMUx6VWIyQTZoOGh6UTBZVlktZDV5MkNtTkViNFBuM1dPZkdrN005aWJJRk00SW9Cb2Q2YTdneWFKWVlKb1dQdGVJb2h0ZkltQ054ZjE2RTdqaXlZZ3RfU1FhUjRZV19IY0YxSzJ0NnIxOV9SS0xWWDUzc2YtZ24xNEQ5OWp1YVRFSmliNlcxTHFhX3V1T0pQdWV4RVg2MnA1bk5pR0hlcHlpQUpIekRvS1ZIOE9WYlp3QzBHd2hSS3lGVTVGTG01em5qeHhvRURhTGstMlRVRVROSXlOOFdlTDhWaUxxS0hSRWMtXzdia213aDFWVVVfbUdFWTZaNFNoeEpwSzVRbmZXeWhTbjVSMmVqeFhJYkFhdWUzY0lUSUc1enBOSmpNLXExZE9TcTdQWEhqdXcxRHVySWFlaFBuSXpNd3IwOFJ0MVd1X2ZIOUpYVDFlN2pzc3NTNzNuVFdEUjYzS2tuM1FtLTg3ZGJFT3ZLRklkWnV4MzdQcHlKZEhyNlpTQUZSUWl4WkItZmFpcms4SFFqdk11UUk2OHNWbm5JMjFTVVlBTV9zOVh4M0ctTGxnTmxmTU5YUjhNRjIxVWlYeTIzeHVsLUFlamc2bnVGZ084TnEzd1ozak4wMGdkdlFzZmRHMThnUFJiZE9RSWtCbXRnZ3dnUUJSVDJRMm5ySQ==","email":"korbad@gmail.com"},"registry.redhat.io":{"auth":"fHVoYy1wb29sLWZkOThiM2QxLWZlYmQtNGNmZS1iZDExLWEyMDhmNTI4ODUzYTpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSTRaamN6TURFd09UZG1PVFUwWVRCa1lqTm1ZVFJqWldVeE1tVmpNemhsTWlKOS50dUxpeFJ2X1Q4QS1uXzJwOElEcFl4elBoWTVTaUFsVVNvSFZtb1lja0tncC1GcFpBSDZzR2laV2tTa01maEVrUzZicjRDSFhqM1d4R0JfQ1l3QWVTY2pPbHVRVDlqeDgyNUVXaTAwdHJ5eUxPdWJ4Mm90T2lGLWxjNm84WWM3aFRudmJBbXNWWFVFU2pvb3N0d3Eyamg1bVBieU1FZm0wM3VNdDdzTVhNQWFRcFNyMUx6VWIyQTZoOGh6UTBZVlktZDV5MkNtTkViNFBuM1dPZkdrN005aWJJRk00SW9Cb2Q2YTdneWFKWVlKb1dQdGVJb2h0ZkltQ054ZjE2RTdqaXlZZ3RfU1FhUjRZV19IY0YxSzJ0NnIxOV9SS0xWWDUzc2YtZ24xNEQ5OWp1YVRFSmliNlcxTHFhX3V1T0pQdWV4RVg2MnA1bk5pR0hlcHlpQUpIekRvS1ZIOE9WYlp3QzBHd2hSS3lGVTVGTG01em5qeHhvRURhTGstMlRVRVROSXlOOFdlTDhWaUxxS0hSRWMtXzdia213aDFWVVVfbUdFWTZaNFNoeEpwSzVRbmZXeWhTbjVSMmVqeFhJYkFhdWUzY0lUSUc1enBOSmpNLXExZE9TcTdQWEhqdXcxRHVySWFlaFBuSXpNd3IwOFJ0MVd1X2ZIOUpYVDFlN2pzc3NTNzNuVFdEUjYzS2tuM1FtLTg3ZGJFT3ZLRklkWnV4MzdQcHlKZEhyNlpTQUZSUWl4WkItZmFpcms4SFFqdk11UUk2OHNWbm5JMjFTVVlBTV9zOVh4M0ctTGxnTmxmTU5YUjhNRjIxVWlYeTIzeHVsLUFlamc2bnVGZ084TnEzd1ozak4wMGdkdlFzZmRHMThnUFJiZE9RSWtCbXRnZ3dnUUJSVDJRMm5ySQ==","email":"korbad@gmail.com"}}}
+
+  vars:
+    user_home_path: "{{ lookup('env','HOME') }}"
+    managed_openshift_path: "{{ (user_home_path, 'managed_openshift') | path_join }}"
+  tasks:
+  # https://access.redhat.com/documentation/en-us/red_hat_openshift_local/2.11/html/getting_started_guide/installation_gsg
+  - name: Manual step, download package tarball from red hat site
+    ansible.builtin.pause:
+      prompt: "Make sure tarball is in ~/Downloads"
+
+  - name: Install package requirements
+    ansible.builtin.package:
+      name: NetworkManager
+    become: yes
+
+  - name: Create directory to store OpenShift artifacts
+    file:
+      state: directory
+      path: "{{ managed_openshift_path }}"
+
+  - name: Untar downloaded package in Downloads dir
+    ansible.builtin.unarchive:
+      src: "{{ (user_home_path, 'Downloads', 'crc-linux-amd64.tar.xz') | path_join }}"
+      dest: "{{ managed_openshift_path }}"
+
+  - name: Ensure ~/bin exists
+    file:
+      state: directory
+      path: "{{ (user_home_path, 'bin') | path_join }}"
+
+  - name: Copy the crc executables to ~/bin
+    copy:
+      src: "{{ (managed_openshift_path, 'crc-linux-2.11.0-amd64', 'crc') | path_join }}"
+      dest: "{{ (user_home_path, 'bin', 'crc') | path_join }}"
+      mode: u+x
+
+  - name: Execute 'crc setup'
+    debug:
+      msg: "Manual step: crc setup"
+
+  # git@github.com:gnuthought/ansible-role-openshift-provision.git
