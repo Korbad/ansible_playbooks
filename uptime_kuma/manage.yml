@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  pre_tasks:
+  - name: Ensure docker-compose is available
+    pip:
+      name: docker-compose
+      state: present
+  roles:
+  - korbad.alma_workstation.uptime_kuma
+  tasks:
+  - name: Launch uptime-kuma site
+    command:
+      cmd: xdg-open http://{{ ansible_host }}:3001
