@@ -1,7 +1,0 @@
----
-- hosts: localhost
-  roles:
-  - name: korbad.alma_workstation.github_repos
-    vars:
-      managed_github_orgs:
-        - github_org: Korbad
