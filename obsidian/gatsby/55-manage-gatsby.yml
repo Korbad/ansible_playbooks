@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  roles:
+  - name: korbad.alma_workstation.npm
+  - name: korbad.alma_workstation.gatsby
