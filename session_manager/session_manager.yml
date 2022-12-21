@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  # https://github.com/johannesjo/linux-window-session-manager
+
+  tasks:
+  - name: Ensure linux-window-session-manager
+    community.general.npm:
+      name: linux-window-session-manager
+      path: "{{ (lookup('env','HOME'), 'managed_npms') | path_join }}"
+      global: yes
+    become: yes
+
+  - name: Download the Gnome Shell Extension
+    git:
+      repo: git@github.com:johannesjo/gnome-shell-extension-window-session-manager.git
+      dest: /home/{{ lookup('env','USER') }}/.local/share/gnome-shell/extensions/lwsm@johannes.super-productivity.com
