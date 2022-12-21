@@ -1,0 +1,10 @@
+---
+- hosts: kdawg
+  become: yes
+  tasks:
+  - name: epel-release
+    command: dnf install epel-release
+  - name: dnf update
+    command: dnf update
+  - name: steam
+    command: dnf install steam
